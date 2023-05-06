@@ -1,6 +1,7 @@
 
 const url = 'https://solid-knowing-celestite.glitch.me/users';
 const content = document.querySelector(".content");
+const container = document.querySelector(".add-value");
 const AddBtn = document.querySelector(".add-btn");
 getData();
 function getData() {
@@ -38,29 +39,39 @@ FrameImg = document.querySelector(".input-img img");
 
 
 AddBtn.addEventListener("click", function () {
-    const name = inputName.value,
-        surname = inputSurname.value,
-        img = inputImg.value;
+    if (inputName.value.trim() !== "" && inputSurname.value.trim() !== "" && inputImg.value.trim() !== "") {
+        const name = inputName.value,
+            surname = inputSurname.value,
+            img = inputImg.value;
 
-    const newUsers =
-    {
-        name,
-        surname,
-        img
+
+        inputName.value = "",
+            inputSurname.value = "",
+            inputImg.value = "";
+
+        const newUsers =
+        {
+            name,
+            surname,
+            img
+        }
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newUsers)
+        })
+            .then(function (response) {
+                if (response.ok === true) {
+                    getData();
+                }
+            })
+    } else if (inputName.value.trim() === "" && inputSurname.value.trim() === "" && inputImg.value.trim() === "") {
+        alert("Sizin Inputlarınızın içi boşdur Zəhmət olmasa inputları doldurun.!")
     }
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newUsers)
-    })
-        .then(function (response) {
-            if (response.ok === true) {
-                getData();
-            }
-        })
 
 
 })
@@ -79,19 +90,18 @@ document.addEventListener("click", function (e) {
     }
     if (e.target.dataset.role == "delete-div") {
         const id = e.target.dataset.id;
-     fetch(`${url}/${id}`,{
-        method: 'DELETE'
-     })
-     .then(function (response) {
-        if (response.ok === true) {
-            getData();
-        frameDiv.style.display = "none";
-        }
+        fetch(`${url}/${id}`, {
+            method: 'DELETE'
         })
-       
+            .then(function (response) {
+                if (response.ok === true) {
+                    getData();
+                    frameDiv.style.display = "none";
+                }
+            })
+
     }
 })
 CloseButton.addEventListener("click", function () {
     frameDiv.style.display = "none";
 })
-

@@ -1,6 +1,7 @@
 body {
 
-    height: 100vh;
+    min-height: 100vh;
+    max-width: fit-content;
     background: linear-gradient(#1c1917 50%, #ffb92a 50%);
 }
 
@@ -25,7 +26,7 @@ button i
 .content
 {
     position: relative;
-    top: 55%;
+    top: 55vh;
     left: 3%;
     display: flex;
     gap: 10px;
@@ -34,7 +35,7 @@ button i
 }
 .add-value {
     position: absolute;
-    left: 50%;
+    left: 100vh;
     top: 10%;
     transform: translate(-50%, 6%);
     width: 500px;
@@ -141,15 +142,16 @@ button i
     outline: none;
     border: none;
     transition: .4s all;
+   
 }
 
-.add-value button:hover {
+.add-btn:hover {
     background-color: #fff;
 }
 
 
 .cards {
-    position: relative;
+    position: absolute;
     top: 55%;
     left: 3%;
     width: 250px;
@@ -235,3 +237,39 @@ button i
     justify-content: center;
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 600px) {  
+    .add-value
+    {
+        left: 30vh;
+        top: 5vh;
+        width: 350px;
+        padding: 20px;
+        height: 250px;
+    }
+    .add-value>input
+    {
+       
+        width: 100%;
+    }
+    .add-value>button
+    {
+        width: 72vw;
+    }
+    
+    .content>div
+    {
+        position: absolute;
+        left: -50%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .add-value
+    {
+        left: 50vh;
+        top: 3.5vh;
+        width: 450px;
+        height: 250px;
+    }
+    
+  }
