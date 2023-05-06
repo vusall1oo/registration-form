@@ -1,0 +1,237 @@
+body {
+
+    height: 100vh;
+    background: linear-gradient(#1c1917 50%, #ffb92a 50%);
+}
+
+.container {
+    position: relative;
+}
+.par-text
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    margin-top: -20px;
+    margin-bottom: 25px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 25px;
+    font-size: 1em;
+}
+button i
+{
+    pointer-events: none;
+}
+.content
+{
+    position: relative;
+    top: 55%;
+    left: 3%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.add-value {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 6%);
+    width: 500px;
+    padding: 15px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(255, 255, 255, 0.314) 0px 5px 15px;
+    background-color: #101010;
+    border: 3px solid #ffb92a;
+    border-radius: 0.6em;
+}
+
+.farx
+{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 0.6em;
+    position: absolute;
+    border: none;
+    left: 94%;
+    font-size: 16px;
+    top: 1%;
+    transition: .3s;  
+}
+.farx:hover
+{
+    background-color: #ffb92a;
+    color: black;
+}
+.frame-div
+{
+    background-color: rgba(128, 128, 128,0.5);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.frame-div-inner
+{
+    width: 80%;
+    height: 80%;
+    border-radius: 0.6em;
+    border: 3px solid #ffb92a;
+    box-shadow: rgba(255, 255, 255, 0.314) 0px 5px 15px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.frame-div-inner>img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.add-value input {
+    width: 400px;
+    height: 40px;
+    background-color: transparent;
+    padding-left: 10px;
+    outline: none;
+    color: white;
+
+    font-size: 15px;
+    border: 2px solid #fff;
+}
+
+.add-value input:focus {
+    border: 2px solid #ffb92a;
+    ;
+    color: #ffb92a;
+    font-size: 15px;
+}
+
+.add-value h1 {
+
+    color: #ffb92a;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.add-value button {
+
+    width: 414px;
+    height: 50px;
+    background-color: #ffb92a;
+    color: #1c1917;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    transition: .4s all;
+}
+
+.add-value button:hover {
+    background-color: #fff;
+}
+
+
+.cards {
+    position: relative;
+    top: 55%;
+    left: 3%;
+    width: 250px;
+    height: 300px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0));
+    backdrop-filter: blur(0.75rem);
+    -webkit-backdrop-filter: blur(0.75rem);
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.37);
+}
+
+
+.show-button
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    position: relative;
+    bottom: 5%;
+    left: 30%;
+    transition: .4s ease;
+    background-color: #101010;
+    color: white;
+}
+.delete-button
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    position: relative;
+    bottom: 5%;
+    left: 30%;
+    transition: .4s ease;
+    background-color: red;
+    color: white;
+}
+.cards button:hover
+{
+    background-color: white;
+    color: black
+}
+
+.name-surname {
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    text-align: center;
+
+
+}
+
+.img-card img {
+
+    transition: .4s;
+
+
+}
+
+.img-card img:hover {
+
+    transform: scale(1.1);
+}
+
+.img-texts {
+    color: #101010;
+}
+
+.img-card {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    overflow: hidden;
+    border: 3px solid #352503;
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
